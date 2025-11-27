@@ -11,10 +11,10 @@ using System.Threading;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 
-namespace add_web_test
+namespace WebAddressbookTests
 {
     [TestFixture]
-    public class UntitledTestCase
+    public class GroupCreationTests
     {
         private IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -44,7 +44,7 @@ namespace add_web_test
         }
 
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void GroupCreationTest()
         {
             driver.Navigate().GoToUrl(baseURL);
             driver.FindElement(By.Name("user")).Clear();
