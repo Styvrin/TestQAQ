@@ -53,8 +53,7 @@ namespace WebAddressbookTests
             FillGroupForm("NameSer","HeadLov", "Doge" );
             SumbitGroupCreation();
             ReturnToGroups();
-          
-        
+         
         }
 
         private void ReturnToGroups()
