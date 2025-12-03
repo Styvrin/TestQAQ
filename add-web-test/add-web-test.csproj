@@ -138,7 +138,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDate.cs" />
     <Compile Include="GroupCreationTest.cs" />
+    <Compile Include="GruopDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

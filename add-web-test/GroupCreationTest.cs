@@ -47,10 +47,15 @@ namespace WebAddressbookTests
         public void GroupCreationTest()
         {
             OpenPage();
-            Login("admin", "secret");
+            //Class Login
+            Login(new AccountDate("admin", "secret"));
             GoToGrouppage();
             InitNewGroupCreation();
-            FillGroupForm("NameSer","HeadLov", "Doge" );
+            //Обязательные поля для GruopDate 
+            GruopDate gruop = new GruopDate("NameSer","HeadLov");
+            // Не обязательные поля для GruopDate
+            gruop.Footer = "Ololo";
+            FillGroupForm(gruop);
             SumbitGroupCreation();
             ReturnToGroups();
          
@@ -66,17 +71,17 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("submit")).Click();
         }
 
-        private void FillGroupForm(string name, string header, string footer)
+        private void FillGroupForm(GruopDate gruop)
         {
             driver.FindElement(By.Name("group_name")).Click();
             driver.FindElement(By.Name("group_name")).Clear();
-            driver.FindElement(By.Name("group_name")).SendKeys(name);
+            driver.FindElement(By.Name("group_name")).SendKeys(gruop.Name);
             driver.FindElement(By.Name("group_header")).Click();
             driver.FindElement(By.Name("group_header")).Clear();
-            driver.FindElement(By.Name("group_header")).SendKeys(header);
+            driver.FindElement(By.Name("group_header")).SendKeys(gruop.Header);
             driver.FindElement(By.Name("group_footer")).Click();
             driver.FindElement(By.Name("group_footer")).Clear();
-            driver.FindElement(By.Name("group_footer")).SendKeys(footer);
+            driver.FindElement(By.Name("group_footer")).SendKeys(gruop.Footer);
         }
 
         private void InitNewGroupCreation()
@@ -89,12 +94,12 @@ namespace WebAddressbookTests
             driver.FindElement(By.LinkText("groups")).Click();
         }
 
-        private void Login(string username, string password)
+        private void Login(AccountDate account)
         {
             driver.FindElement(By.Name("user")).Clear();
-            driver.FindElement(By.Name("user")).SendKeys(username);
+            driver.FindElement(By.Name("user")).SendKeys(account.Username);
             driver.FindElement(By.Name("pass")).Clear();
-            driver.FindElement(By.Name("pass")).SendKeys(password);
+            driver.FindElement(By.Name("pass")).SendKeys(account.Password);
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
 
