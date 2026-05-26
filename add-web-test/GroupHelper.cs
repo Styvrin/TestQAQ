@@ -8,12 +8,12 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Firefox;
 namespace WebAddressbookTests
 {
-    public class GroupHelper
+    public class GroupHelper : HelperBase
     {
-        private IWebDriver driver;
-        public GroupHelper(IWebDriver driver)
+        
+        public GroupHelper(IWebDriver driver) : base(driver) 
         {
-            this.driver = driver;
+       
         }
 
         public void InitNewGroupCreation()

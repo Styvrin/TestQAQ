@@ -9,12 +9,13 @@ using OpenQA.Selenium.Firefox;
 
 namespace WebAddressbookTests
 {
-    public class LoginHelper
+    public class LoginHelper : HelperBase
     {
-        private IWebDriver driver;
+        
 
-        public LoginHelper(IWebDriver driver) { 
-            this.driver = driver;    
+        public LoginHelper(IWebDriver driver) : base(driver) 
+        { 
+           
         }
         public void Login(AccountDate account)
         {

@@ -9,12 +9,12 @@ using OpenQA.Selenium.Firefox;
 
 namespace WebAddressbookTests
 {
-    public class NavigationHelper
+    public class NavigationHelper : HelperBase
     {
-        private IWebDriver driver;
-        public NavigationHelper(IWebDriver driver)
+        
+        public NavigationHelper(IWebDriver driver) : base(driver) 
         {
-            this.driver = driver;
+         
         }
 
         public void GoToHomePage()

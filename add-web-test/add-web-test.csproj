@@ -143,6 +143,7 @@
     <Compile Include="GroupHelper.cs" />
     <Compile Include="GroupRemoveTest.cs" />
     <Compile Include="GruopDate.cs" />
+    <Compile Include="HelperBase.cs" />
     <Compile Include="LoginHelper.cs" />
     <Compile Include="NavigationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
