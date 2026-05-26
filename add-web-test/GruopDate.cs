@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebAddressbookTests
 {
-    internal class GruopDate
+    public class GruopDate
     {
         private string name;
         private string header;
