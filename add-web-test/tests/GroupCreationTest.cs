@@ -16,18 +16,18 @@ namespace WebAddressbookTests
         [Test]
         public void GroupCreationTest()
         {
-            navigationHelper.GoToHomePage();
+            app.navigator.GoToHomePage();
             //Class Login
-            loginHelper.Login(new AccountDate("admin", "secret"));
-            navigationHelper.GoToGrouppage();
-            groupHelper.InitNewGroupCreation();
+            app.auth.Login(new AccountDate("admin", "secret"));
+            app.navigator.GoToGrouppage();
+            app.Groups.InitNewGroupCreation();
             //Обязательные поля для GruopDate 
             GruopDate gruop = new GruopDate("NameSer","HeadLov");
             // Не обязательные поля для GruopDate
             gruop.Footer = "Ololo";
-            groupHelper.FillGroupForm(gruop);
-            groupHelper.SumbitGroupCreation();
-            groupHelper.ReturnToGroups();
+            app.Groups.FillGroupForm(gruop);
+            app.Groups.SumbitGroupCreation();
+            app.Groups.ReturnToGroups();
          
         }
     }
