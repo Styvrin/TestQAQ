@@ -48,7 +48,7 @@ namespace WebAddressbookTests
             SelectGroup(p);
             RemoveGroup();
             ReturnToGroups();
-            ReturnToGroups();
+            
 
             return this;
 
