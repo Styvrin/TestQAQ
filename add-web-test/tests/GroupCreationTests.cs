@@ -1,12 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
+
 
 namespace WebAddressbookTests
 {
@@ -16,19 +14,25 @@ namespace WebAddressbookTests
         [Test]
         public void GroupCreationTest()
         {
-            app.navigator.GoToHomePage();
-            //Class Login
-            app.auth.Login(new AccountDate("admin", "secret"));
-            app.navigator.GoToGrouppage();
-            app.Groups.InitNewGroupCreation();
             //Обязательные поля для GruopDate 
-            GruopDate gruop = new GruopDate("NameSer","HeadLov");
+            GruopDate gruop = new GruopDate("NameSer", "HeadLov");
             // Не обязательные поля для GruopDate
             gruop.Footer = "Ololo";
-            app.Groups.FillGroupForm(gruop);
-            app.Groups.SumbitGroupCreation();
-            app.Groups.ReturnToGroups();
-         
+
+            app.Groups.Create(gruop);
+
+        }
+
+        [Test]
+        public void EmptyGroupCreationTest()
+        {
+           
+            GruopDate gruop = new GruopDate("", "");
+            gruop.Footer = "";
+
+            app.Groups.Create(gruop);
+              
+
         }
     }
 }

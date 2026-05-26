@@ -140,9 +140,10 @@
   <ItemGroup>
     <Compile Include="model\AccountDate.cs" />
     <Compile Include="appmanager\ApplicationManager.cs" />
-    <Compile Include="tests\GroupCreationTest.cs" />
+    <Compile Include="tests\GroupCreationTests.cs" />
     <Compile Include="appmanager\GroupHelper.cs" />
-    <Compile Include="tests\GroupRemoveTest.cs" />
+    <Compile Include="tests\GroupModificationTests.cs" />
+    <Compile Include="tests\GroupRemoveTests.cs" />
     <Compile Include="model\GruopDate.cs" />
     <Compile Include="appmanager\HelperBase.cs" />
     <Compile Include="appmanager\LoginHelper.cs" />
