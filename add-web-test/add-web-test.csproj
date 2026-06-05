@@ -150,6 +150,7 @@
     <Compile Include="appmanager\NavigationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\Testbase.cs" />
+    <Compile Include="tests\TsetSuiteFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

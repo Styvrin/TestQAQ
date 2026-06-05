@@ -15,7 +15,7 @@ namespace WebAddressbookTests
         public void GroupCreationTest()
         {
             //Обязательные поля для GruopDate 
-            GruopDate gruop = new GruopDate("NameSer", "HeadLov");
+            GruopDate gruop = new GruopDate("lopatka", "HeadLov");
             // Не обязательные поля для GruopDate
             gruop.Footer = "Ololo";
 

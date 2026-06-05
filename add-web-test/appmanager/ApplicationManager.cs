@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace WebAddressbookTests
@@ -19,16 +20,29 @@ namespace WebAddressbookTests
         protected NavigationHelper navigationHelper;
         protected GroupHelper groupHelper;
 
-        public ApplicationManager()
+        private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
+
+        private ApplicationManager()
         {
 
             driver = new FirefoxDriver();
             baseURL = "http://localhost/addressbook";
+
             loginHelper = new LoginHelper(this);
             navigationHelper = new NavigationHelper(this);
             groupHelper = new GroupHelper(this);
         }
 
+        
+        public static ApplicationManager GetInstance()
+        {
+
+            if (! app.IsValueCreated)
+            {
+                app.Value = new ApplicationManager();
+            }
+            return app.Value;
+        }
         public IWebDriver Driver 
         {
             get
