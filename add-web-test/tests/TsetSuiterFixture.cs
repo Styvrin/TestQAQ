@@ -11,7 +11,7 @@ namespace WebAddressbookTests
     [SetUpFixture]
     public class TsetSuiteFixture
     {
-     
+
 
         [SetUp]
         public void InitApplicationManager()

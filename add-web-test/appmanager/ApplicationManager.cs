@@ -33,23 +33,23 @@ namespace WebAddressbookTests
             groupHelper = new GroupHelper(this);
         }
 
-        
+
         public static ApplicationManager GetInstance()
         {
 
-            if (! app.IsValueCreated)
+            if (!app.IsValueCreated)
             {
                 app.Value = new ApplicationManager();
             }
             return app.Value;
         }
-        public IWebDriver Driver 
+        public IWebDriver Driver
         {
             get
             {
                 return driver;
             }
-                }
+        }
         public void Stop()
         {
             try
@@ -64,9 +64,9 @@ namespace WebAddressbookTests
 
         public LoginHelper auth
         {
-            get 
-            { 
-                return loginHelper; 
+            get
+            {
+                return loginHelper;
             }
         }
 
